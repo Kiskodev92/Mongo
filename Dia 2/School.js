@@ -72,19 +72,19 @@ let Students = mongoose.model('Students', studentsSchema);
 
 
 
-// Teachers.insertMany([teacher1, teacher2, teacher3, teacher4])
-//   .then(function(docs) {
-//     console.log("Teachers insertados:", docs.length);
-//   })
-//   .catch(function(err) {
-//     console.error(err);
-//   });
+Teachers.insertMany([teacher1, teacher2, teacher3, teacher4])
+  .then(function(docs) {
+    console.log("Teachers insertados:", docs.length);
+  })
+  .catch(function(err) {
+    console.error(err);
+  });
 
 
 
 //   Subjects.insertMany([subject1, subject2, subject3, subject4])
 //   .then(function(docs) {
-//     console.log("Materias insertadas:", docs.length);
+//     console.log("Asignaturas insertadas:", docs.length);
 //   })
 //   .catch(function(err) {
 //     console.error(err);
@@ -112,25 +112,25 @@ let Students = mongoose.model('Students', studentsSchema);
 
 
 
-Students.findOne({ firstName: "Pedro" })
-  .then((student) => {
-    console.log(`Las notas de Pedro:`);
-    student.marks.forEach((mark) => {
-      console.log(`- ${mark.mark} en ${mark.subjects.title}`);
-    });
+// Students.findOne({ firstName: "Pedro" })
+//   .then((student) => {
+//     console.log(`Las notas de Pedro:`);
+//     student.marks.forEach((mark) => {
+//       console.log(`- ${mark.mark} en ${mark.subjects.title}`);
+//     });
 
-    console.log(`Las asignaturas de Pedro:`);
-    student.marks.forEach((mark) => {
-      console.log(`- ${mark.subjects.title}`);
-    });
+//     console.log(`Las asignaturas de Pedro:`);
+//     student.marks.forEach((mark) => {
+//       console.log(`- ${mark.subjects.title}`);
+//     });
 
-    console.log(`Los profes de Pedro:`);
-    student.marks.forEach((mark) => { 
-      mark.subjects.teachers.forEach((teacher) => {
-        console.log(`- ${teacher.firstName} ${teacher.lastName}`);
-      });
-    });
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+//     console.log(`Los profes de Pedro:`);
+//     student.marks.forEach((mark) => { 
+//       mark.subjects.teachers.forEach((teacher) => {
+//         console.log(`- ${teacher.firstName} ${teacher.lastName}`);
+//       });
+//     });
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
